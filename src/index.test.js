@@ -1,4 +1,4 @@
-import { capitalize, reverse, calculator } from './index.js';
+import { capitalize, reverse, calculator, caesarCipher } from './index.js';
 
 test('check capitalization', () => {
     expect(capitalize('hello')).toBe('Hello');
@@ -17,3 +17,8 @@ test('calculator', () => {
     expect(calculator.divide(6, 2)).toBe(3);
 });
 
+test('caesarCipher', () => {
+    expect(caesarCipher('hello', 3)).toBe('khoor');
+    expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
+    expect(caesarCipher('xyz', 3)).toBe('abc');
+});
