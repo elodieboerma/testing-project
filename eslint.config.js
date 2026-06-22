@@ -1,19 +1,12 @@
-import "eslint-plugin-jest";
+import js from "@eslint/js";
+import globals from "globals";
+import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   {
-    // update this to match your test files
-    files: ["src/*.js", "src/*.test.js"],
-    plugins: { jest: pluginJest },
-    languageOptions: {
-      globals: pluginJest.environments.globals.globals,
-    },
-    rules: {
-      "jest/no-disabled-tests": "warn",
-      "jest/no-focused-tests": "error",
-      "jest/no-identical-title": "error",
-      "jest/prefer-to-have-length": "warn",
-      "jest/valid-expect": "error",
-    },
+    files: ["**/*.{js,mjs,cjs}"],
+    plugins: { js },
+    extends: ["js/recommended"],
+    languageOptions: { globals: globals.browser },
   },
 ]);
