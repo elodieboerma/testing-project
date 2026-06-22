@@ -18,14 +18,19 @@ export function caesarCipher(string, shift) {
     for (let i = 0; i < string.length; i++) {
         let char = string[i];
         let code = string.charCodeAt(i);
-        if (char.match(/[a-z]/i)) {
-            if (code >= 65 && code <= 90) {
-                char = String.fromCharCode(((code - 65 + shift) % 26) + 65);
-            } else {
-                char = String.fromCharCode(((code - 97 + shift) % 26) + 97);
-            }
-        }
+        char = shiftLetter(char,code,shift);
         result += char;
     }
     return result;
 }
+
+function shiftLetter(char,code,shift) {
+    if (char.match(/[a-z]/i)) {
+        if (code >= 65 && code <= 90) {
+            char = String.fromCharCode(((code - 65 + shift) % 26) + 65);
+        } else {
+            char = String.fromCharCode(((code - 97 + shift) % 26) + 97);
+        }
+    }
+    return char;
+};
