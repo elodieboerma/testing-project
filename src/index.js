@@ -34,3 +34,31 @@ function shiftLetter(char,code,shift) {
     }
     return char;
 };
+
+export function analyzeArray(array) {
+    if (array.length === 0) {
+        return {
+            average: 0,
+            min: 0,
+            max: 0,
+            length: 0
+        };
+    }
+
+
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i];
+    }
+    const average = sum / array.length;
+    const min = Math.min(...array);
+    const max = Math.max(...array);
+    const length = array.length;
+
+    return {
+        average,
+        min,
+        max,
+        length
+    };
+};
