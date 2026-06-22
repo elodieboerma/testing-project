@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "watch": "jest --watch *.js",
+    "watch": "jest --watch",
     "dev": "webpack serve --config webpack.dev.js",
     "syncChanges": "git checkout gh-pages && git merge main --no-edit",
     "build": "webpack --config webpack.prod.js",
@@ -27,6 +27,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.29.7",
     "@eslint/js": "^10.0.1",
+    "babel-jest": "^30.4.1",
     "css-loader": "^7.1.4",
     "eslint": "^10.5.0",
     "eslint-plugin-jest": "^29.15.2",
